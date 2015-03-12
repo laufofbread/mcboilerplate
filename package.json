@@ -1,0 +1,17 @@
+{
+  "name": "McBoilerplate",
+  "version": "1.0.0",
+  "description": "Front End boilerplate for Jump projects",
+  "main": "index.js",
+  "directories": {
+    "doc": "doc"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Laura McCartney",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.8.11"
+  }
+}
