@@ -2,16 +2,19 @@
   "name": "McBoilerplate",
   "version": "1.0.0",
   "description": "Front End boilerplate for Jump projects",
-  "main": "index.js",
-  "directories": {
-    "doc": "doc"
-  },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Laura McCartney",
   "license": "ISC",
   "devDependencies": {
-    "gulp": "^3.8.11"
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^2.1.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-csslint": "^0.1.5",
+    "gulp-rename": "^1.2.0",
+    "gulp-ruby-sass": "^1.0.0-alpha.3",
+    "gulp-uglify": "^1.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
   }
 }
