@@ -19,7 +19,6 @@ var gulp = require('gulp'),
 
 gulp.task('scripts', function() {
     return gulp.src([
-    	'public_html/js/vendor/slick.js',
 		'public_html/js/plugins.js',
 		'public_html/js/app.js'
     ]) //Add which files to concaternate here
