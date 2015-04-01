@@ -2,9 +2,7 @@
 //
 //$color:	#;
 //
-//$screen-sm-min:	px;
-//$screen-md-min:	px;
-//$screen-lg-min:	px;
+
 
 
 //Set height and width using one declaration
@@ -31,4 +29,22 @@
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+
+@mixin appearance($appearance) {
+    -webkit-appearance: $appearance;
+    -moz-appearance:    $appearance;
+    appearance:         $appearance;
+}
+
+@mixin bg-cover {
+    -webkit-background-size: cover;
+    -moz-background-size:    cover;
+    background-size: cover;
+}
+
+@mixin box-shadow($box-shadow) {
+	-webkit-box-shadow:$box-shadow;
+	-moz-box-shadow:$box-shadow;
+	box-shadow:	$box-shadow;
 }
