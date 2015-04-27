@@ -1,0 +1,52 @@
+Options +FollowSymlinks
+RewriteEngine on
+RewriteBase /
+
+RewriteRule \.(css|jpe?g|gif|png|svg|js|pdf|html|txt|doc|xls|ico|xml|php|docx|ttf|otf|eot|woff|woff2|map)$ - [L]
+
+# enforce www. is used#
+# RewriteCond %{HTTP_HOST} !^$
+# RewriteCond %{HTTP_HOST} !^www\. [NC]
+# RewriteRule ^ http%1://www.%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
+
+# redirect to index.php
+RewriteRule ^(.*)?$ index.php
+
+##############
+## SECURITY ##
+##############
+
+## Protecting config.php
+<files /includes/config.php>
+order allow,deny
+deny from all
+</files>
+
+## Prevent Directory Browsing
+Options All -Indexes
+
+## Prevent Image Hot Linking
+RewriteCond %{HTTP_REFERER} !^$
+RewriteCond %{HTTP_REFERER} !^http://(www.)?carraw.dev/.*$ [NC]
+RewriteRule .(gif|jpg)$ http://www.topbet.dev/hotlink.gif [R,L]
+
+## Protect Your .htaccess File
+<Files .htaccess>
+order allow,deny
+deny from all
+</Files>
+
+## Stop dangerous information from being passed
+RewriteCond %{QUERY_STRING} (\|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} GLOBALS(=|\[|\%[0-9A-Z]{0,2}) [OR]
+RewriteCond %{QUERY_STRING} _REQUEST(=|\[|\%[0-9A-Z]{0,2})
+RewriteRule ^(.*)$ index.php [F,L]
+
+## Remove magic quotes
+php_flag magic_quotes_gpc Off
+
+#AuthName "Restricted Area"
+#AuthType Basic
+#AuthUserFile /home/sites/wesayhowhigh.com/public_html/subdomains/thetopbet/.htpasswd
+#AuthGroupFile /dev/null
+#require valid-user
