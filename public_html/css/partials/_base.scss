@@ -1,8 +1,8 @@
-//$font:	;
-//
-//$color:	#;
-//
-
+@mixin media-query($device) {
+    @media only screen and (min-width: $device) {
+        @content;
+    }
+}
 
 //Set height and width using one declaration
 @mixin size($width, $height: $width) {

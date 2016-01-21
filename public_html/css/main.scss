@@ -1,10 +1,23 @@
 @charset "UTF-8";
-@import "normalize.scss";
-@import "vars.scss";
-@import "helpers.scss";
-@import "grid.scss";
-@import "nav.scss";
+
+// This is the main sass file. All other files will be imported to this file.
+// - Third party CSS belongs in the vendor file and should not be edited.
+// - Code that does not compile directly to CSS (e.g.mixins) belongs in the _base partial.
+// - Variables belong in this file.
 
 
-@import "mid.scss";
-@import "large.scss";
+$mid-breakpoint:          600px;
+$large-breakpoint:        800px;
+
+@import
+        "vendor/normalize",
+        "vendor/helpers",
+        "partials/base",
+        "partials/fonts",
+        "partials/grid",
+		"partials/nav",
+		"partials/buttons",
+		"partials/layout"
+;
+
+
